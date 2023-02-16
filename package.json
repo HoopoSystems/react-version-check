@@ -1,0 +1,40 @@
+{
+  "name": "react-version-check",
+  "version": "1.0.0",
+  "description": "provide a react component to check your code version. when not latest, forces hard refresh on browser",
+  "author": "Dror Birenbaum",
+  "license": "MIT",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoopoSystems/react-version-check.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "version",
+    "version-check",
+    "bundle"
+  ],
+  "devDependencies": {
+    "@types/react": "^18.0.12",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "typescript": "^4.7.3"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
+}
