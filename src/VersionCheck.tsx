@@ -43,12 +43,16 @@ interface Props {
    * the version that will be compared against the version on the server.
    * should pass it a value from package.json
    * @example
+   * import { VersionCheck } from 'version-check';
    * import packageJson from "../package.json";
-   * function App() {
-   *   <>
-   *     <VersionCheck currentVersion={packageJson.version} />
-   *     <div>your website</div>
-   *   <>
+   *
+   * export function App() {
+   *   return (
+   *     <>
+   *       <VersionCheck currentVersion={packageJson.version} />
+   *       <div>your website</div>
+   *     </>
+   *   );
    * }
    * */
   currentVersion: string;
@@ -72,7 +76,7 @@ interface Props {
    * when true, render small text in the corner of the screen (version text / error text / loading text)
    * @default true
    */
-  display?: boolean;
+  display: "none" | "default";
   /** override the default design with your own custom className */
   className?: string;
   /** override the default design with your own custom style */
