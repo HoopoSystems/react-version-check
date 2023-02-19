@@ -76,7 +76,7 @@ interface Props {
    * when true, render small text in the corner of the screen (version text / error text / loading text)
    * @default true
    */
-  display: "none" | "default";
+  display?: boolean;
   /** override the default design with your own custom className */
   className?: string;
   /** override the default design with your own custom style */

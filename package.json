@@ -1,6 +1,6 @@
 {
   "name": "react-version-check",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "provide a react component to check your code version. when not latest, forces hard refresh on browser",
   "author": "Dror Birenbaum",
   "license": "MIT",
@@ -18,10 +18,11 @@
   },
   "keywords": [
     "react",
-    "typescript",
+    "cache busting",
+    "cache",
     "version",
-    "version-check",
-    "bundle"
+    "versioning",
+    "version-check"
   ],
   "devDependencies": {
     "@types/react": "^18.0.12",
