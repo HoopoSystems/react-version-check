@@ -17,7 +17,7 @@ export function App() {
   );
 }
 ```
-## prebuild-script
+## helper script
 To make this work, you will need from time to time to update the version number inside your `package.json` ---
 and you will need a script to run on each build to copy this number from `package.json` to `public/meta.json`
 
@@ -33,18 +33,19 @@ fs.writeFile("./public/meta.json", jsonData, "utf8", function (err) {
   console.log("meta.json file has been saved with latest version number");
 });
 ```
-### running on each build: 
-In the `package.json` file, inside the `scripts` object add this line:
+### running on each build/start: 
+In the `package.json` file, inside the `scripts` object add those line:
 ```javascript
 "scripts": {
-    // ... all your  scripts
-    "prebuild": "npm run generate-build-version" // the line to add!
+  "update-version": "node update-version",
+  "start": "npm run update-version && npm start", // you can replace ["npm start"] with whatever start-command you had before
+  "prebuild": "npm run generate-build-version"
 },
 ```
 To test if this is working, go to `package.json` and update the version number.  
 then, go to your terminal and run:
 ```bash
-npm run prebuild
+npm run update-version
 ```
 Now check if the file `public/meta.json` has been updated with this version number.
 
