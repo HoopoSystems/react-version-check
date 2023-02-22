@@ -39,7 +39,7 @@ In the `package.json` file, inside the `scripts` object add those line:
 "scripts": {
   "update-version": "node update-version",
   "start": "npm run update-version && npm start", // you can replace ["npm start"] with whatever start-command you had before
-  "prebuild": "npm run generate-build-version"
+  "prebuild": "npm run update-version"
 },
 ```
 To test if this is working, go to `package.json` and update the version number.  
