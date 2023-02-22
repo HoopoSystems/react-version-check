@@ -1,7 +1,8 @@
 # keep your code updated to its latest version!
-Sometimes browsers cash websites, thus presenting an old version of them.
+Sometimes browsers cache websites, thus presenting an old version of them.  
 The `<VersionCheck>` component checks if your version is the latest,
-and if not, it forces a hard refresh to fix this.
+and if not, it forces a hard refresh to fix this.  
+**No more backward compatibility headaches!**
 
 ## usage example
 ```jsx
@@ -18,7 +19,7 @@ export function App() {
 }
 ```
 ## helper script
-To make this work, you will need from time to time to update the version number inside your `package.json` ---
+To make this work, you will need from time to time (and especially after big changes) to update the version number inside your `package.json`  ---
 and you will need a script to run on each build to copy this number from `package.json` to `public/meta.json`
 
 ### the script:
@@ -33,7 +34,8 @@ fs.writeFile("./public/meta.json", jsonData, "utf8", function (err) {
   console.log("meta.json file has been saved with latest version number");
 });
 ```
-### running on each build/start: 
+### running on each build/start:
+I recommend running this script on each build/start.  
 In the `package.json` file, inside the `scripts` object add those line:
 ```javascript
 "scripts": {
